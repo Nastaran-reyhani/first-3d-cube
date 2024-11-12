@@ -1,0 +1,94 @@
+.cube {
+    width: 400px;
+    height: 400px;
+    margin: 200px auto;
+    /* background-color: blue; */
+    position: relative;
+    transition: 10s linear;
+    transform-style: preserve-3d;
+    /* border: 1px solid rgba(255, 0, 0, 0.869); */
+    transform: rotate3d(1, 1, 1, 50deg);
+    
+    &:hover {
+        transform: rotate3d(1, 1, 1, 500deg);
+        >div {
+            &:nth-of-type(1) {
+                transform: translatez(300px);
+            }
+
+            &:nth-of-type(2) {
+                transform: translateZ(-300px);
+            }
+
+            &:nth-of-type(3) {
+                transform-origin: top;
+                transform: rotateX(90deg) translateY(-200px) translateZ(100px);
+
+            }
+
+            &:nth-of-type(4) {
+                transform-origin: bottom;
+                transform: rotateX(-90deg) translateY(200px) translateZ(100px);
+            }
+
+            &:nth-of-type(5) {
+                transform-origin: left;
+                transform: rotateY(90deg) translateX(-200px) translateZ(-100px);
+
+            }
+
+            &:nth-of-type(6) {
+                transform-origin: right;
+                transform: rotateY(-90deg) translateX(200px) translateZ(-100px);
+            }
+        }
+    }
+
+    >div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid white;
+        background-color: rgba(0, 0, 0, 0.406);
+        transition: 1s;
+
+        &:nth-of-type(1) {
+            transform: translatez(200px);
+        }
+
+        &:nth-of-type(2) {
+            transform: translateZ(-200px);
+
+        }
+
+        &:nth-of-type(3) {
+            transform-origin: top;
+            transform: rotateX(90deg) translateY(-200px);
+
+        }
+
+        &:nth-of-type(4) {
+            transform-origin: bottom;
+            transform: rotateX(-90deg) translateY(200px);
+
+        }
+
+        &:nth-of-type(5) {
+            transform-origin: left;
+            transform: rotateY(90deg) translateX(-200px);
+
+        }
+
+        &:nth-of-type(6) {
+            transform-origin: right;
+            transform: rotateY(-90deg) translateX(200px);
+
+        }
+
+    }
+
+
+
+}
